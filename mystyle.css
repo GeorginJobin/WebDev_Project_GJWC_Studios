@@ -1,0 +1,134 @@
+.big-rectangle img {
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 16px auto 0 auto;
+    border-radius: 20px;
+}
+
+
+.rectangles-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1050px;
+    margin: 32px auto 0 auto;
+    padding: 0 32px;
+}
+
+.big-rectangle {
+    width: 4 00px;
+    height: 400px;
+    background: #ffe281;
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(84, 13, 110, 0.10);
+}
+
+body {
+    background-color: #fff6ea;
+
+}
+
+.banner {
+    width: 100%;
+    height: 150px;
+    background: url('banner.png');
+    background-size: 1500px 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.banner2 {
+    width: 100%;
+    height: 10px;
+    background-color: #ffe281;
+    background-size: 1500px 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    position: sticky;
+    top: 100px;
+    z-index: 899;
+}
+
+.header-title {
+    font-family: myFont, Arial, sans-serif;
+    font-size: 26px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    min-height: 48px;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: left;
+    gap: 12px;
+}
+
+.header-buttons button {
+    background: #fff6ea;
+    color: #540d6e;
+    border: none;
+    border-radius: 16px;
+    padding: 6px 16px;
+    font-family: myFont, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(84, 13, 110, 0.08);
+}
+
+.header-buttons button:hover {
+    background-color: #ffe281
+}
+
+.header-buttons button:active {
+    background-color: #ffe281;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    padding: 25px 16px;
+    background: #540d6e;
+    color: #fff6ea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+@font-face {
+    font-family: myFont;
+    src: url('../SansationLight.woff');
+}
+
+.p1 {
+    font-family: myFont;
+    src: url('../SansationLight.woff');
+    text-align: center;
+}
+
+.icon {
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -55px;
+}
