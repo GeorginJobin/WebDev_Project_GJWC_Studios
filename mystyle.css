@@ -1,9 +1,9 @@
 .big-rectangle img {
     display: block;
-    max-width: 50%;
-    max-height: 50%;
-    margin: 16px auto 0 auto;
-    border-radius: 20px;
+    max-width: 60%;
+    max-height: 40%;
+    margin: 30px auto 0 auto;
+    border-radius: 0px;
 }
 
 
@@ -18,7 +18,7 @@
 }
 
 .big-rectangle {
-    width: 4 00px;
+    width: 400px;
     height: 400px;
     background: #ffe281;
     border-radius: 24px;
@@ -27,13 +27,29 @@
 
 body {
     background-color: #fff6ea;
+    position: relative;
+    min-height: 100vh; /* Ensures body is at least full viewport height */
+}
 
+body::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-image: url('manga-spread.jpeg');
+    background-repeat: repeat;
+    background-size: 1328px 750px; /* Makes each repeated image x200x200 pixels */
+    background-position: center ; /* Start tiling from bottom center */
+    opacity: 0.065; /* Adjust this value (0.1 to 1.0) to control background opacity */
+    z-index: -1; /* Keep it behind content */
 }
 
 .banner {
     width: 100%;
-    height: 150px;
-    background: url('banner.png');
+    height: 125px;
+    background: url('banner9.png');
     background-size: 1500px 150px;
     display: flex;
     align-items: center;
@@ -116,13 +132,14 @@ body {
 
 @font-face {
     font-family: myFont;
-    src: url('../SansationLight.woff');
+    src: url('SansationLight.woff');
 }
 
 .p1 {
     font-family: myFont;
-    src: url('../SansationLight.woff');
+    src: url('SansationLight.woff');
     text-align: center;
+    margin-top: 16px
 }
 
 .icon {
@@ -131,4 +148,12 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: -55px;
+}
+
+.hoodie {
+    height: 100px;
+    display: block;
+    margin-left: 25px;
+    margin-right: auto;
+   
 }
