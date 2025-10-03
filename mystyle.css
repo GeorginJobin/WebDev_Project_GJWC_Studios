@@ -1,75 +1,88 @@
-.big-rectangle img {
-    display: block;
-    max-width: 60%;
-    max-height: 40%;
-    margin: 30px auto 0 auto;
-    border-radius: 0px;
-}
-
-
+/* Layout Components */
 .rectangles-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1050px;
+    max-width: 975px;
     margin: 32px auto 0 auto;
     padding: 0 32px;
 }
 
 .big-rectangle {
-    width: 400px;
+    width: 375px;
     height: 400px;
     background: #ffe281;
     border-radius: 24px;
     box-shadow: 0 4px 16px rgba(84, 13, 110, 0.10);
 }
 
+.big-rectangle img {
+    display: block;
+    max-width: 60%;
+    max-height: 40%;
+    margin: 30px auto 0 auto;
+    border-radius: 0;
+}
+
+/* Global Styles */
 body {
     background-color: #fff6ea;
     position: relative;
-    min-height: 100vh; /* Ensures body is at least full viewport height */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 body::before {
     content: '';
     position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-image: url('../Images/manga-spread.jpeg');
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Images/manga-spread.jpeg');
     background-repeat: repeat;
-    background-size: 1328px 750px; /* Makes each repeated image x200x200 pixels */
-    background-position: center ; /* Start tiling from bottom center */
-    opacity: 0.065; /* Adjust this value (0.1 to 1.0) to control background opacity */
-    z-index: -1; /* Keep it behind content */
+    background-size: 1328px 750px;
+    background-position: center;
+    opacity: 0.12;
+    z-index: -1;
 }
 
+/* Banner Styles */
 .banner {
     width: 100%;
     height: 125px;
-    background: url('../Images/banner9.png');
-    background-size: 1500px 150px;
+    background: url('Images/banner9.png');
+    
     display: flex;
     align-items: center;
     justify-content: center;
-
-
 }
 
 .banner2 {
     width: 100%;
     height: 10px;
     background-color: #ffe281;
-    background-size: 1500px 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0px;
+    margin: 0;
     position: sticky;
     top: 100px;
     z-index: 899;
+}
+
+/* Header Styles */
+.header {
+    position: sticky;
+    top: 0;
+    padding: 25px 16px;
+    background: #540d6e;
+    color: #fff6ea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-title {
@@ -97,7 +110,7 @@ body::before {
     background: #fff6ea;
     color: #540d6e;
     border: none;
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 6px 16px;
     font-family: myFont, Arial, sans-serif;
     font-size: 15px;
@@ -108,7 +121,7 @@ body::before {
 }
 
 .header-buttons button:hover {
-    background-color: #ffe281
+    background-color: #ffe281;
 }
 
 .header-buttons button:active {
@@ -117,37 +130,23 @@ body::before {
     transform: translateY(4px);
 }
 
-.header {
-    position: sticky;
-    top: 0;
-    padding: 25px 16px;
-    background: #540d6e;
-    color: #fff6ea;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-
+/* Typography */
 @font-face {
     font-family: myFont;
     src: url('SansationLight.woff');
 }
 
 .p1 {
-    font-family: myFont;
-    src: url('SansationLight.woff');
+    font-family: myFont, Arial, sans-serif;
     text-align: center;
-    margin-top: 16px
+    margin-top: 16px;
 }
 
+/* Image Styles */
 .icon {
     height: 60px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -55px;
+    margin: -55px auto 0 auto;
 }
 
 .hoodie {
@@ -155,5 +154,8 @@ body::before {
     display: block;
     margin-left: 25px;
     margin-right: auto;
-   
+}
+
+textarea {
+  resize: none;
 }
