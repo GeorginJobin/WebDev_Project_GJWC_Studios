@@ -5,3 +5,5 @@ We have used css, and have extra images that we are not using in the 'Images' fo
 The 'test.html' file is blueprint/prototype that we will be using for future pages
 
 The 'shop.html' just a temp file that we will expand upon later.
+
+GitHub Repo: https://github.com/willc43979/WebDev_Project_OtakuHaven
