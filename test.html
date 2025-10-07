@@ -3,200 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @font-face {
-            font-family: myFont;
-            src: url('../SansationLight.woff');
-        }
-
-        /* Header */
-        .header {
-            position: sticky;
-            top: 0;
-            padding: 25px 16px;
-            background: #540d6e;
-            color: #fff6ea;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 900; /* below sidebar & overlay so overlay can cover page */
-        }
-        .header .container {
-            position: absolute;
-            left: 16px;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .header h2 {
-            font-family: myFont, Arial, sans-serif;
-            margin: 0;
-        }
-
-        /* Hamburger bars (shared) */
-        .bar1, .bar2, .bar3 {
-            width: 35px;
-            height: 5px;
-            background-color: #fff6ea;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
-        .change .bar1 {
-            transform: translate(0, 11px) rotate(-45deg);
-        }
-        .change .bar2 { opacity: 0; }
-        .change .bar3 {
-            transform: translate(0, -11px) rotate(45deg);
-        }
-
-        /* Overlay (click to close) */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-            background: transparent;
-            z-index: 1000; /* under sidebar but above page content */
-        }
-        .overlay.show { display: block; }
-
-        /* Sidebar styles */
-        .sidebar {
-            height: calc(100% - 32px);
-            width: 220px;
-            position: fixed;
-            top: 8px;
-            left: -236px; /* hidden by default, includes gap */
-            background-color: #540d6e;
-            overflow-x: hidden;
-            transition: left 0.3s;
-            padding-top: 40px;
-            z-index: 1100; /* above overlay */
-            border-radius: 0 0 10px 0;
-        }
-        .sidebar.open { left: 8px; }
-        .sidebar a {
-            padding: 12px 24px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #fff6ea;
-            display: block;
-            transition: background 0.2s;
-            margin-top: 32px;
-        }
-        .sidebar a:first-of-type {
-            margin-top: 56px;
-        }
-        .sidebar a:hover { background: #540d6e; }
-
-        /* Hamburger inside sidebar (close button) */
-        .sidebar .container {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            cursor: pointer;
-            z-index: 1110;
-            transition: left 0.3s;
-        }
-
-        /* Small responsive tweak: make sidebar full-width on narrow screens */
-        @media (max-width: 480px) {
-            .sidebar { width: 100%; left: -100%; }
-            .sidebar.open { left: 0; }
-        }
-
-        /* page layout examples */
-        main { padding: 20px; transition: margin-left 0.3s; }
-        body.sidebar-open main,
-        body.sidebar-open footer {
-            margin-left: 236px;
-        }
-        footer { padding: 12px 20px; color: #666; transition: margin-left 0.3s; }
-    </style>
+    <!-- Linking css -->
+    <link rel="stylesheet" href="mystyle.css">
 </head>
 
 <body>
-    <div class="header" id="myHeader" style="position:relative;">
-        <!-- Header opener (visible when sidebar is closed) -->
-        <div class="container" id="openHamburger" onclick="openSidebar()">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-        <h2>My Header</h2>
-    </div>
 
-    <!-- Overlay -->
-    <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+    <!-- Creating header, and assigning class to contents of header -->
+    <header class="header" id="myHeader">
+        <nav class="header-content">
+            <div class="header-buttons">
+                <button onclick="location.href='index.html'">Home</button>
+                <button onclick="location.href='about.html'">About</button>
+                <button onclick="location.href='contact.html'">Contact</button>
+                <button onclick="location.href='shop.html'">Shop</button>
+            </div>
 
-    <!-- Sidebar (contains the close button) -->
-    <div class="sidebar" id="mySidebar">
-        <div class="container" id="closeHamburger" onclick="closeSidebar()">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
+        </nav>
+        <img src="../Images/new_icon.png" alt="Logo" class="icon">
+    </header>
 
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <!-- The gold lining -->
+    <div class="banner2"></div>
 
-    <main>
-        <section>
-            <h2>About This Site</h2>
-            <p>This is a basic HTML site template. You can add your content here.</p>
-        </section>
-    </main>
 
+
+    <section>
+        <h2 class="p1" center>Test/Main Prototype/Base Website</h2>
+    </section>
+
+  
+    <!-- Just a footer with names on it -->
     <footer>
-        <p>&copy; 2024 My Website</p>
+        <p>&copy; 2025 Georgin Jobin, Will Comerford</p>
     </footer>
 
-    <script>
 
-        function openSidebar() {
-            var sidebar = document.getElementById("mySidebar");
-            var openBtn = document.getElementById("openHamburger");
-            var closeBtn = document.getElementById("closeHamburger");
-            var overlay = document.getElementById("overlay");
 
-            sidebar.classList.add("open");
-            overlay.classList.add("show");
-            document.body.classList.add("sidebar-open");
 
-            // hide the header opener (so hamburger "stays in the sidebar")
-            openBtn.style.display = "none";
 
-            // show the animated "X" inside the sidebar
-            closeBtn.classList.add("change");
-        }
 
-        function closeSidebar() {
-            var sidebar = document.getElementById("mySidebar");
-            var openBtn = document.getElementById("openHamburger");
-            var closeBtn = document.getElementById("closeHamburger");
-            var overlay = document.getElementById("overlay");
-
-            sidebar.classList.remove("open");
-            overlay.classList.remove("show");
-            document.body.classList.remove("sidebar-open");
-
-            // show the header opener again
-            openBtn.style.display = "inline-block";
-
-            // remove the animated "X" state
-            closeBtn.classList.remove("change");
-        }
-
-        // Optional: close on Esc key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") closeSidebar();
-        });
-    </script>
 </body>
 
 </html>

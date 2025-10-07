@@ -1,4 +1,6 @@
-/* Layout Components */
+/* Rectangles layout compotents */
+
+/* Changes the spacing between the 2 rectangles on home page */
 .rectangles-row {
     display: flex;
     justify-content: space-between;
@@ -9,14 +11,59 @@
     padding: 0 32px;
 }
 
+.large-rectangle {
+    width: 98%;
+    height: 200px;
+    background-color: #704060;
+    border-radius: 20px;
+    margin: 20px auto 0 auto;
+    box-sizing: border-box;
+    align-items: center;
+
+}
+
+.large-rectangle:nth-of-type(2n) {
+    background-color: #8C5875;
+     /* Every other rectangle */
+}
+
+.large-rectangle img {
+    display: block;
+    max-width: 80%;
+    max-height: 70%;
+    margin: 30px auto auto 30px;
+    border-radius: 0;
+}
+
+.large-rectangle h2 {
+    
+    font-family: myFont, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 16px;
+
+}
+
+.large-rectangle p {
+    
+    font-family: myFont, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 42px;
+    font-size: 20px;
+    
+
+}
+
 .big-rectangle {
-    width: 375px;
-    height: 400px;
+    width: 300px;
+    height: 350px;
     background: #ffe281;
     border-radius: 24px;
     box-shadow: 0 4px 16px rgba(84, 13, 110, 0.10);
 }
 
+/* Adjusts the sizing and positioning of the images in the rectangles */
 .big-rectangle img {
     display: block;
     max-width: 60%;
@@ -25,7 +72,7 @@
     border-radius: 0;
 }
 
-/* Global Styles */
+/* GLobal body background stuff */
 body {
     background-color: #fff6ea;
     position: relative;
@@ -34,6 +81,7 @@ body {
     padding: 0;
 }
 
+/*Pseudo element that activates before body css styling */
 body::before {
     content: '';
     position: absolute;
@@ -45,21 +93,22 @@ body::before {
     background-repeat: repeat;
     background-size: 1328px 750px;
     background-position: center;
-    opacity: 0.12;
-    z-index: -1;
+    opacity: 0.08;
+    z-index: -1; /*setting this background image as the lowest item on layering but above background colour */
 }
 
 /* Banner Styles */
 .banner {
     width: 100%;
     height: 125px;
-    background: url('Images/banner9.png');
+    background: url('Images/banner10.png');
     
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Used for the gold lining on header */
 .banner2 {
     width: 100%;
     height: 10px;
@@ -70,7 +119,7 @@ body::before {
     margin: 0;
     position: sticky;
     top: 100px;
-    z-index: 899;
+    z-index: 899; /*Layering position*/
 }
 
 /* Header Styles */
@@ -85,12 +134,7 @@ body::before {
     align-items: center;
 }
 
-.header-title {
-    font-family: myFont, Arial, sans-serif;
-    font-size: 26px;
-    text-align: center;
-    margin: 0 auto;
-}
+
 
 .header-content {
     display: flex;
@@ -106,6 +150,7 @@ body::before {
     gap: 12px;
 }
 
+/* Button styling on header*/
 .header-buttons button {
     background: #fff6ea;
     color: #540d6e;
@@ -116,21 +161,23 @@ body::before {
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(84, 13, 110, 0.08);
+    
+    box-shadow: 0 5px #666;
+    
 }
 
+/* Animations for buttons, hover changing colour and actiavte making a clicking animation */
 .header-buttons button:hover {
     background-color: #ffe281;
 }
 
 .header-buttons button:active {
     background-color: #ffe281;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+    box-shadow: 0 0px #666;
+    transform: translateY(5px);
 }
 
-/* Typography */
+/* Fonts */
 @font-face {
     font-family: myFont;
     src: url('SansationLight.woff');
@@ -142,13 +189,21 @@ body::before {
     margin-top: 16px;
 }
 
-/* Image Styles */
+.pfont {
+    font-family: myFont, Arial, sans-serif;
+    text-align: center;
+    margin-top: 16px;
+}
+
+
+/* Title image styling */
 .icon {
     height: 60px;
     display: block;
     margin: -55px auto 0 auto;
 }
 
+/* Class for hoodie picture styling */
 .hoodie {
     height: 100px;
     display: block;
@@ -156,6 +211,3 @@ body::before {
     margin-right: auto;
 }
 
-textarea {
-  resize: none;
-}
