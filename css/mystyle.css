@@ -180,7 +180,7 @@ body::before {
 /* Fonts */
 @font-face {
     font-family: myFont;
-    src: url('../media/SansationLight.woff');
+    src: url('../media/SansationLight.woff') format('woff');;
 }
 
 .p1 {
