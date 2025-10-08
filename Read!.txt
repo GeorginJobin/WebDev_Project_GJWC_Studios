@@ -7,4 +7,5 @@ The 'test.html' file is blueprint/prototype that we will be using for future pag
 The 'shop.html' just a temp file that we will expand upon later.
 
 
-GitHub Repo: https://github.com/willc43979/WebDev_Project_GJWC_Studios
+GitHub Repo: https://github.com/GeorginJobin/WebDev_Project_GJWC_Studios
+
