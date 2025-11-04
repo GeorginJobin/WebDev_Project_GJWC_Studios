@@ -12,9 +12,9 @@
 }
 
 .large-rectangle {
-    width: 98%;
+    width: 96%;
     height: 200px;
-    background-color: #d646a6c4;
+    background-color: #F7E7A9;
     border-radius: 20px;
     margin: 20px auto 32px auto;
     box-sizing: border-box;
@@ -22,44 +22,57 @@
 
 }
 
+/*
 .large-rectangle:nth-of-type(2n) {
-    background-color: #d646a6c4;
-    /* Every other rectangle */
+    background-color: #C6E8FF;
+    /* Every other rectangle 
 }
+
+*/
 
 .large-rectangle img {
     display: block;
-    max-width: 80%;
-    max-height: 70%;
-    margin: 30px auto auto 30px;
-    border-radius: 0;
+    max-width: 90%;
+    max-height: 85%;
+    margin: 11px auto auto 12px;
+    border: 4px solid #7C6CA5;
+    border-radius: 10px;
 }
 
 .large-rectangle h2 {
 
     font-family: myFont, Arial, sans-serif;
-    text-align: center;
+    text-align: left;
     margin: 0;
-    padding: 16px;
 
+    margin-left: 150px;
+    padding: 16px
 }
 
 .large-rectangle p {
 
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    text-align: center;
-    margin: 0;
-    padding: 42px;
-    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    margin-left: 166px;
+    font-size: 17px;
+}
 
+.large-rectangle a {
 
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: left;
+    margin-left: 30px;
+    font-size: 15px;
 }
 
 .big-rectangle {
-    width: 300px;
-    height: 350px;
-    background: #ffe281;
+    width: 350px;
+    height: 400px;
+    background: #F7E7A9;
     border-radius: 24px;
     box-shadow: 0 4px 16px rgba(84, 13, 110, 0.10);
 }
@@ -73,6 +86,115 @@
     border-radius: 0;
 }
 
+/* About page rectangle style */
+.mega-rectangle {
+    width: 97%;
+    height: auto;
+    min-height: 14rem;
+    background-color: #F7E7A9;
+    border-radius: 15px;
+    margin: 30px auto 32px auto;
+    box-sizing: border-box;
+    padding: 22px 28px;
+    align-items: left;
+
+}
+
+.obscene-rectangle {
+    width: 97%;
+    height: 22rem;
+    min-height: 3rem;
+    background-color: #F7E7A9;
+    border-radius: 15px;
+    margin: 30px auto 32px auto;
+    box-sizing: border-box; 
+    align-items: left;
+
+}
+
+
+.obscene-rectangle h1 {
+    font-family: 'Open Sans', sans-serif;
+    
+    line-height: 1.6;
+    text-align: left;
+    margin-left: 3rem;
+    font-size: 32px;
+    padding: 30px;
+    margin-left: 200px;
+    color: #540d6e;
+}
+.obscene-rectangle h2 {
+    font-family: 'Open Sans', sans-serif;
+    
+    line-height: 1.6;
+    text-align: left;
+    margin-left: 3rem;
+    font-size: px;
+    padding: 30px;
+    margin-left: 200px;
+}
+
+.obscene-rectangle p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: left;
+    margin-left: 3rem;
+    font-size: 20px;
+    padding: 30px;
+    margin-left: 200px;
+}
+
+.obscene-rectangle img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border: 4px solid #7C6CA5;
+    border-radius: 10px;   
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+/* Contact page rectangle style */
+.giga-rectangle {
+    width: 60%;
+    /* allow the rectangle to grow with its content (textarea can be resized) */
+    height: auto;
+    min-height: 18rem;
+    /* sensible minimum so it doesn't collapse */
+    background-color: #F7E7A9;
+    border-radius: 15px;
+    margin: 30px auto 32px auto;
+    box-sizing: border-box;
+    padding: 22px 28px;
+    align-items: left;
+}
+
+/* Make the form inputs and textarea expand to fit the container and respect resizing */
+.giga-rectangle form input[type="text"],
+.giga-rectangle form input[type="email"],
+.giga-rectangle form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    margin: 8px 0 14px 0;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    font-family: myFont, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.giga-rectangle form textarea {
+    min-height: 8rem;
+    /* initial height */
+    resize: vertical;
+    /* allow user to resize vertically */
+    overflow: auto;
+}
+
+
+
 /* GLobal body background stuff */
 body {
     background-color: #fff6ea;
@@ -83,6 +205,7 @@ body {
 }
 
 /*Pseudo element that activates before body css styling */
+/*
 body::before {
     content: '';
     position: absolute;
@@ -96,8 +219,11 @@ body::before {
     background-position: center;
     opacity: 0.08;
     z-index: -1;
-    /*setting this background image as the lowest item on layering but above background colour */
+    //setting this background image as the lowest item on layering but above background colour 
 }
+
+*/
+
 
 /* Banner Styles */
 .banner {
@@ -114,7 +240,7 @@ body::before {
 .banner2 {
     width: 100%;
     height: 10px;
-    background-color: #ffe281;
+    background-color: #EFE1CF;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,7 +256,7 @@ body::before {
     position: sticky;
     top: 0;
     padding: 25px 16px;
-    background: #540d6e;
+    background: #7C6CA5;
     color: #fff6ea;
     display: flex;
     flex-direction: column;
@@ -164,6 +290,7 @@ body::before {
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
+    
 
     box-shadow: 0 5px #666;
 
@@ -171,7 +298,7 @@ body::before {
 
 /* Animations for buttons, hover changing colour and actiavte making a clicking animation */
 .header-buttons button:hover {
-    background-color: #ffe281;
+    background-color: #F7E7A9;
 }
 
 .header-buttons button:active {
@@ -183,20 +310,57 @@ body::before {
 /* Fonts */
 @font-face {
     font-family: myFont;
-    src: url('../media/SansationLight.woff') format('woff');
+    src: url('../media/Helvetica.ttf') format('ttf');
     ;
 }
 
 .p1 {
     font-family: myFont, Arial, sans-serif;
     text-align: center;
-    margin-top: 16px;
+    margin-top: 40px;
+    color: #22222A;
+}
+
+/* About page two-tone background that matches the square colours on index.html */
+.about-background {
+    /* Left: #704060, Right: #8C5875 (matches .large-rectangle and its nth-of-type style) */
+    background: linear-gradient(90deg, #704060 50%, #8C5875 50%);
+    padding: 48px 16px;
+    /* space around the centered card */
+    display: flex;
+    justify-content: center;
+}
+
+.about-inner {
+    max-width: 980px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    /* slightly off-white to sit above the color bands */
+    padding: 28px 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Stack colours vertically on small screens so the card still looks good */
+@media (max-width: 720px) {
+    .about-background {
+        background: linear-gradient(180deg, #704060 50%, #8C5875 50%);
+        padding: 28px 12px;
+    }
+
+    .about-inner {
+        padding: 20px;
+        border-radius: 10px;
+    }
 }
 
 .pfont {
     font-family: myFont, Arial, sans-serif;
-    text-align: center;
+    text-align: left;
     margin-top: 16px;
+    margin-left: 10px;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 
@@ -213,4 +377,9 @@ body::before {
     display: block;
     margin-left: 25px;
     margin-right: auto;
+}
+
+hr.solid {
+    border-top: 1px solid #bbb;
+    border-color: black;
 }
