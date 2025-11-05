@@ -1,4 +1,5 @@
 /* Rectangles layout compotents */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Changes the spacing between the 2 rectangles on home page */
 .rectangles-row {
@@ -41,7 +42,8 @@
 
 .large-rectangle h2 {
 
-    font-family: myFont, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     text-align: left;
     margin: 0;
 
@@ -51,8 +53,8 @@
 
 .large-rectangle p {
 
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     line-height: 1.6;
     text-align: left;
     margin-left: 166px;
@@ -61,8 +63,8 @@
 
 .large-rectangle a {
 
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     line-height: 1.6;
     text-align: left;
     margin-left: 30px;
@@ -114,7 +116,7 @@
 
 
 .obscene-rectangle h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     line-height: 1.6;
     text-align: left;
@@ -126,7 +128,7 @@
 }
 
 .obscene-rectangle h2 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     line-height: 1.6;
     text-align: left;
@@ -137,7 +139,7 @@
 }
 
 .obscene-rectangle p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     line-height: 1.6;
     text-align: left;
@@ -182,7 +184,7 @@
     margin: 8px 0 14px 0;
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 6px;
-    font-family: myFont, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
 }
 
@@ -294,7 +296,7 @@ body::before {
     border: none;
     border-radius: 12px;
     padding: 6px 16px;
-    font-family: myFont, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -326,7 +328,7 @@ body::before {
     border: none;
     border-radius: 5px;
     padding: 6px 16px;
-    font-family: myFont, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -347,14 +349,9 @@ body::before {
 
 
 /* Fonts */
-@font-face {
-    font-family: myFont;
-    src: url('../media/Helvetica.ttf') format('ttf');
-    ;
-}
 
 .p1 {
-    font-family: myFont, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     margin-top: 40px;
     color: #22222A;
@@ -394,7 +391,7 @@ body::before {
 }
 
 .pfont {
-    font-family: myFont, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: left;
     margin-top: 16px;
     margin-left: 10px;
