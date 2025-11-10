@@ -12,15 +12,31 @@
     padding: 0 32px;
 }
 
+.anime-reviews {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    overflow-x: auto;
+    padding: 16px;
+    scroll-behavior: smooth; 
+    align-items: stretch;
+
+}
+
 .large-rectangle {
     width: 96%;
-    height: 200px;
+    height : auto;
     background-color: #F7E7A9;
     border-radius: 20px;
-    margin: 20px auto 32px auto;
+    margin: 20px 12 32px 0;
     box-sizing: border-box;
     align-items: center;
+    padding: 15px;
+}
 
+.large-rectangle:hover {
+    border-bottom: 4px solid #540d6e;
+    background-color: #bbbbbd;
 }
 
 /*
@@ -33,9 +49,10 @@
 
 .large-rectangle img {
     display: block;
-    max-width: 90%;
-    max-height: 85%;
-    margin: 11px auto auto 12px;
+    width: 180px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 0 10px 0;
     border: 4px solid #7C6CA5;
     border-radius: 10px;
 }
@@ -46,9 +63,7 @@
     font-weight: 400;
     text-align: left;
     margin: 0;
-
-    margin-left: 150px;
-    padding: 16px
+    margin-left: 15px
 }
 
 .large-rectangle p {
@@ -57,7 +72,7 @@
     font-weight: 400;
     line-height: 1.6;
     text-align: left;
-    margin-left: 166px;
+    margin-left: 15px;
     font-size: 17px;
 }
 
