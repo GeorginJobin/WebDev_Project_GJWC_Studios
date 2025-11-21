@@ -18,14 +18,16 @@
     gap: 40px;
     overflow-x: auto;
     padding: 16px;
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
     align-items: stretch;
+
+}
 
 }
 
 .large-rectangle {
     width: 96%;
-    height : auto;
+    height: auto;
     background-color: #F7E7A9;
     border-radius: 20px;
     margin: 20px 12 32px 0;
@@ -87,20 +89,31 @@
 }
 
 .big-rectangle {
-    width: 350px;
-    height: 400px;
+    /* Full-bleed style with small horizontal gaps */
+    width: 63vw; /* leaves 16px gap left and right */
+    max-width: none; /* allow it to span the viewport width (minus gap)
+                       remove any earlier cap so it stretches on wide screens */
+    height: auto;
     background: #F7E7A9;
     border-radius: 24px;
     box-shadow: 0 4px 16px rgba(84, 13, 110, 0.10);
+    margin: 24px auto; /* vertical spacing; horizontal auto keeps it centered */
+    padding: 12px; /* small inner gap so content doesn't touch rounded edges */
+    position: relative;
+    overflow: visible; /* allow internal controls (dots/arrows) to position freely */
+    box-sizing: border-box;
 }
 
 /* Adjusts the sizing and positioning of the images in the rectangles */
-.big-rectangle img {
+.big-rectangle img,
+.big-rectangle .mySlides img {
     display: block;
-    max-width: 70%;
-    max-height: 50%;
-    margin: 30px auto 0 auto;
-    border-radius: 0;
+    width: 100%;
+    height: 90%; /* let image height scale naturally so the container grows */
+    object-position: center;
+    margin: 0;
+    border-radius: 12px;
+    border: 4px solid #7C6CA5; /* change to inherit or 12px if you want rounded image corners */
 }
 
 /* About page rectangle style */
@@ -214,8 +227,13 @@
 
 
 /* GLobal body background stuff */
-body {
+html {
+    /* keep the page background colour on the root so body::before can sit above it */
     background-color: #fff6ea;
+}
+
+body {
+    background-color: transparent;
     position: relative;
     min-height: 100vh;
     margin: 0;
@@ -223,7 +241,7 @@ body {
 }
 
 /*Pseudo element that activates before body css styling */
-/*
+
 body::before {
     content: '';
     position: absolute;
@@ -237,10 +255,13 @@ body::before {
     background-position: center;
     opacity: 0.08;
     z-index: -1;
-    //setting this background image as the lowest item on layering but above background colour 
+    -webkit-filter: blur(1.5px);
+  
+   
+   
 }
 
-*/
+
 
 
 /* Banner Styles */
@@ -279,6 +300,7 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1000;
 }
 
 
@@ -419,6 +441,7 @@ body::before {
 .icon {
     height: 60px;
     display: block;
+    /* avoid overlapping content: keep icon inside header flow */
     margin: -55px auto 0 auto;
 }
 
@@ -433,4 +456,114 @@ body::before {
 hr.solid {
     border-top: 1px solid #bbb;
     border-color: black;
+}
+
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1200px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    border-radius: 25px;
+}
+
+/* Ensure images inside slides have rounded corners and fit the slide area */
+.mySlides img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 25px;
+    margin-top: 16px;
+}
+
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.7s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
