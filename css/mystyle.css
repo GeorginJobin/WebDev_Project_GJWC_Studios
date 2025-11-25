@@ -23,7 +23,7 @@
 
 }
 
-}
+
 
 .large-rectangle {
     width: 96%;
@@ -256,6 +256,7 @@ body::before {
     opacity: 0.08;
     z-index: -1;
     -webkit-filter: blur(1.5px);
+    filter: blur(1.5px);
   
    
    
