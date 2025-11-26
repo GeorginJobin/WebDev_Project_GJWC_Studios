@@ -23,10 +23,14 @@
                     <a href="contact.html">Contact</a>
                     <a href="shop.html">Shop</a>
                 </div>
-                
+
             </div>
         </nav>
-        <img src="../media/new_icon.png" alt="Logo" class="icon">
+        <div class="header-logo-wrapper">
+            <img src="../media/new_icon.png" alt="Logo" class="icon">
+            <button class="Logo-button" onclick="location.href='../index.html'" aria-label="Go to homepage"></button>
+
+        </div>
     </header>
 
     <!-- The gold lining -->
@@ -39,7 +43,7 @@
         <h3 class="p1" center>Under development!</h3>
     </section>
 
-    
+
     <!-- Just a footer with names on it -->
     <section class="footer">
 
@@ -47,18 +51,24 @@
 
         <footer role="contentinfo">
             <div class="icon">
-                <img src="../media/Logo.png" alt="logo" loading="lazy">
+                <img src="../media/Logo.png" alt="logo">
             </div>
+
+            <br>
+
 
             <!-- Short About -->
             <p class="about">
-                <br><br>
+
                 Anime Haven was started out of a lifelong love for anime and the community around it.
-                <br>
+
                 Whether you're browsing for new favourites or looking for something special, we’re here to help you feel
                 at home.
-                <br><br><br><br>
+
             </p>
+
+            <br>
+
 
             <!-- Other Clickables -->
             <div class="link-container">
@@ -67,7 +77,7 @@
                         <li>
                             <a href="#">Our Company</a>
                         </li>
-                        <br>
+
                         <li>
                             <a href="../pages/about.html">About Us</a>
                         </li>
@@ -79,7 +89,7 @@
                         <li>
                             <a href="../pages/contact.html">Contact</a>
                         </li>
-                        <br>
+
                         <li>
                             <a href="#">Terms & Condition</a>
                         </li>
@@ -92,7 +102,7 @@
                         <li>
                             <a href="../index.html">Home</a>
                         </li>
-                        <br>
+
                         <li>
                             <a href="#top">Back To Top</a>
                         </li>
@@ -103,13 +113,14 @@
             </div>
             </div>
 
+
             <br><br>
             <small class="Copyright-Notice">© 2025 Georgin Jobin, Will Comerford, Rishi Sachin</small>
         </footer>
     </section>
 
     <script>
-     // New function to toggle the dropdown menu
+        // New function to toggle the dropdown menu
         function toggleDropdown() {
             document.getElementById("myDropdown").classList.toggle("show");
         }

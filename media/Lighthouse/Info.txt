@@ -1,0 +1,1 @@
+We added alt text to all images, which help us max out our accessibility score for google lighthouse.
