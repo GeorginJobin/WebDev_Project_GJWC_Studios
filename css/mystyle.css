@@ -1,5 +1,6 @@
 /* Rectangles layout compotents */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap'); /* Added for shop page */
 
 /* Changes the spacing between the 2 rectangles on home page */
 .rectangles-row {
@@ -90,17 +91,22 @@
 
 .big-rectangle {
     /* Full-bleed style with small horizontal gaps */
-    width: 63vw; /* leaves 16px gap left and right */
-    max-width: none; /* allow it to span the viewport width (minus gap)
+    width: 63vw;
+    /* leaves 16px gap left and right */
+    max-width: none;
+    /* allow it to span the viewport width (minus gap)
                        remove any earlier cap so it stretches on wide screens */
     height: auto;
     background: #F7E7A9;
     border-radius: 24px;
     box-shadow: 0 4px 16px rgba(84, 13, 110, 0.10);
-    margin: 24px auto; /* vertical spacing; horizontal auto keeps it centered */
-    padding: 12px; /* small inner gap so content doesn't touch rounded edges */
+    margin: 24px auto;
+    /* vertical spacing; horizontal auto keeps it centered */
+    padding: 12px;
+    /* small inner gap so content doesn't touch rounded edges */
     position: relative;
-    overflow: visible; /* allow internal controls (dots/arrows) to position freely */
+    overflow: visible;
+    /* allow internal controls (dots/arrows) to position freely */
     box-sizing: border-box;
 }
 
@@ -109,11 +115,13 @@
 .big-rectangle .mySlides img {
     display: block;
     width: 100%;
-    height: 90%; /* let image height scale naturally so the container grows */
+    height: 90%;
+    /* let image height scale naturally so the container grows */
     object-position: center;
     margin: 0;
     border-radius: 12px;
-    border: 4px solid #7C6CA5; /* change to inherit or 12px if you want rounded image corners */
+    border: 4px solid #7C6CA5;
+    /* change to inherit or 12px if you want rounded image corners */
 }
 
 /* About page rectangle style */
@@ -238,6 +246,8 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    /* Add Sora font as secondary option for shop page elements */
+    font-family: "Roboto", sans-serif, Sora, system-ui;
 }
 
 /*Pseudo element that activates before body css styling */
@@ -257,12 +267,27 @@ body::before {
     z-index: -1;
     -webkit-filter: blur(1.5px);
     filter: blur(1.5px);
-  
-   
-   
+
+
 }
 
+/* Added from shopstyle.css for shop page layout */
+section {
+    padding: 20px;
+}
 
+/* Added from shopstyle.css - Title for Screen Readers*/
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 
 
 /* Banner Styles */
@@ -305,7 +330,6 @@ body::before {
 }
 
 
-
 .header-content {
     display: flex;
     align-items: center;
@@ -320,15 +344,16 @@ body::before {
     margin-top: auto;
 }
 
-
-.header-buttons {
-    display: flex;
-    align-items: left;
-    gap: 12px;
+/* --- Dropdown Menu Styles (converted from header buttons) --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    /* Aligns the button to the left within header-content */
+    margin-right: auto;
 }
 
-/* Button styling on header*/
-.header-buttons button {
+/* Dropdown button styling (similar to old buttons) */
+.dropbtn {
     background: #fff6ea;
     color: #540d6e;
     border: none;
@@ -339,19 +364,128 @@ body::before {
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 5px #666;
-
 }
 
-/* Animations for buttons, hover changing colour and actiavte making a clicking animation */
+/* Animations for buttons, hover changing colour and activate making a clicking animation */
+.dropbtn:hover {
+    background-color: #F7E7A9;
+}
+
+.dropbtn:active {
+    background-color: #ffe281;
+    box-shadow: 0 0px #666;
+    transform: translateY(5px);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    /* ensures rounded corners on the links */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #540d6e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu when the 'show' class is added with JavaScript */
+.show {
+    display: block;
+}
+
+/* Removed old .header-buttons block and associated button styles */
+
+/* Added from shopstyle.css: Shop Header Elements */
+
+.header-logo-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.header-logo-wrapper img:hover {
+    transform: scale(1.1);
+
+    transition: transform 0.2s;
+}
+
+/* Note: .header-content img rule is complex. Keep the original for index.html but be aware of shop.html needing different behavior */
+
+.Logo-button {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 80px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    z-index: 2;
+}
+
+.cart-button {
+    position: absolute;
+    top: 12px;
+    bottom: 10px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    z-index: 910;
+    margin: 0;
+}
+
+.cart-button button {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.cart-button img {
+    height: 70px;
+    width: 70px;
+}
+
+.cart-button img:hover {
+    transform: scale(1.15);
+
+    transition: 0.2s;
+}
+
+/* Shop button overrides for .header-buttons (to enable different hover/active) */
 .header-buttons button:hover {
     background-color: #F7E7A9;
+    transform: scale(1.15); /* Shop specific */
+    transition: 0.2s; /* Shop specific */
 }
 
 .header-buttons button:active {
     background-color: #ffe281;
     box-shadow: 0 0px #666;
-    transform: translateY(5px);
+    transform: translateY(1px); /* Shop specific (less movement) */
 }
+
 
 .forum-button {
     display: flex;
@@ -566,5 +700,521 @@ hr.solid {
 
     to {
         opacity: 1
+    }
+}
+
+
+
+.mainBanner {
+    width: 100%;
+    height: auto;
+    background-color: #ffe281;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    position: relative;
+    /* establish positioning context */
+}
+
+.banner-image-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.banner-image img {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+    height: 600px;
+}
+
+
+.scrolling-text {
+    width: 90%;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.scrolling-text-container {
+    white-space: nowrap;
+    display: inline-block;
+    transform: translateX(100%);
+    color: white;
+    font-size: 35px;
+    justify-content: stretch;
+    animation: animate 10s linear infinite;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* scroll half of the text width since it’s duplicated */
+    }
+}
+
+
+.product-previews-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 90%;
+    height: 260px;
+}
+
+.product-previews-container .product-preview {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 6px;
+    box-sizing: border-box;
+    pointer-events: auto;
+    transition: transform 200ms ease, top 200ms ease, left 200ms ease;
+}
+
+.product-previews-container .product-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.product-previews-container .product-preview:nth-child(1) {
+    left: 12%;
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 8;
+}
+
+.product-previews-container .product-preview:nth-child(2) {
+    left: 32%;
+    top: 36%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 9;
+}
+
+.product-previews-container .product-preview:nth-child(3) {
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 12;
+}
+
+.product-previews-container .product-preview:nth-child(4) {
+    left: 68%;
+    top: 36%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 9;
+}
+
+.product-previews-container .product-preview:nth-child(5) {
+    left: 88%;
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 8;
+}
+
+.product-previews-container .product-preview:hover {
+    transform: translate(-50%, -50%) scale(1.35);
+    z-index: 20;
+
+}
+
+.products-container {
+    /* Set the container's width */
+    width: 60%;
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    
+    /* These two lines are the key for horizontal centering: */
+    margin-left: auto; /* Shorthand for margin: 0 auto; */
+    margin-right: auto; 
+    
+    /* You had margin: 0 auto; and margin-top: 50px; 
+       Let's use the shorthand for better clarity and keep the top margin: */
+    margin: 50px 100px 0; /* 50px top, auto left/right (centered), 0 bottom */
+}
+
+.products-heading {
+
+    text-align: center;
+
+}
+
+
+.product-card {
+    background: #ffe281;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    border: 2px solid #ddd;
+    align-items: stretch;
+}
+
+
+.product-image {
+    background: #7C6CA5;
+    padding: 10px;
+    border-radius: 12px;
+    width: 200px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+
+}
+
+.product-image img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.product-card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card-label {
+    font-size: 16px;
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Product-name:hover {
+    color: rgb(53, 129, 216);
+    text-decoration: underline;
+    transition: transform 0.05s, color 0.05s;
+    cursor: pointer;
+}
+
+.Category-Badge {
+    color: grey;
+}
+
+.add-to-cart-button button {
+
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    background: #7C6CA5;
+    color: #fff6ea;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.add-to-cart-button button:hover {
+    background-color: #6b5c8a;
+    transform: scale(1.1);
+}
+
+/* row taht holds price and add-to-cart button */
+.product-card-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.add-to-cart-button {
+    order: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.price {
+    order: 2;
+    margin-left: auto;
+    margin-top: 0;
+    font-weight: 700;
+    color: #222;
+    font-size: 16px;
+    text-align: right;
+}
+
+.footer {
+    background-color: #000000;
+}
+
+.footer-wave {
+    width: 100%;
+    height: 8px;
+    background-color: #d6d1ca;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.icon img {
+    display: block;
+    /* 0 top, auto left/right (centers it), 20px bottom (pushes text down) */
+    margin: 50px auto 20px auto; 
+    height: 80px;
+    width: 80px;
+    
+    /* These ensure the old positioning doesn't interfere */
+    position: static; 
+    text-align: center;
+}
+
+.profile a {
+    font-weight: bold;
+}
+
+.profile .icon img {
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.about {
+    text-align: center;
+    color: white;
+}
+
+.link-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    width: 100%;
+
+
+}
+
+
+.information {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.resource {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+    color: white;
+}
+
+.navigation {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+
+/* General Styling mainly for bottom of page*/
+
+a {
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Scroll Effect */
+
+html {
+    scroll-behavior: smooth;
+}
+
+small {
+    color: white;
+
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    /* --- Navigation & Header --- */
+    .header-content img {
+        /* Remove the large fixed margin on the logo */
+        margin-right: auto;
+    }
+
+    /* --- Anime Reviews (Pills) --- */
+    .anime-reviews {
+        /* Change from horizontal scroll to grid wrap */
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-x: visible;
+    }
+
+    .large-rectangle {
+        /* Two pills per row */
+        width: 95%;
+        margin: 5px;
+    }
+
+    /* --- Shop Grid --- */
+    .products-container {
+        /* Switch from 4 columns to 2 columns on tablets */
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+    }
+
+    .rectangles-row {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .big-rectangle {
+        width: 85vw;
+    }
+
+    .giga-rectangle {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    /* --- Navigation & Header --- */
+    .header-content {
+        flex-direction: column;
+        /* Stack logo and buttons vertically */
+        gap: 15px;
+    }
+
+    .header-content img {
+        margin-right: 0;
+        /* Reset margin completely */
+        margin-bottom: 10px;
+    }
+
+    .forum-button,
+    .dropdown {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        /* Center buttons */
+    }
+
+    /* --- Anime Reviews (Pills) --- */
+    .anime-reviews {
+        /* Stack pills vertically */
+        flex-direction: column;
+        flex-wrap: wrap;
+        overflow-x: visible;
+    }
+
+    .large-rectangle {
+        width: 100%;
+        /* Full width */
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Adjust image inside to be slightly smaller and centered on mobile */
+    .large-rectangle img {
+        float: none;
+        /* Remove float */
+        margin: 0 auto 15px auto;
+        /* Center image */
+        width: 140px;
+        /* Decrease size slightly */
+        height: 200px;
+    }
+
+    .large-rectangle h2,
+    .large-rectangle p,
+    .large-rectangle a {
+        text-align: center;
+        /* Center text inside pill */
+    }
+
+    /* --- Shop Grid --- */
+    .products-container {
+        /* Switch to 1 single column for mobile */
+        grid-template-columns: 1fr;
+        width: 95%;
+        /* Use almost full width */
+    }
+
+    /* --- Product Cards --- */
+    .product-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* --- Homepage Rectangles --- */
+    .rectangles-row {
+        flex-direction: column;
+        padding: 0 16px;
+    }
+
+    .big-rectangle {
+        width: 95vw;
+        /* Full width for main rectangle */
+    }
+
+    /* --- Contact Forms --- */
+    .giga-rectangle {
+        width: 95%;
+        /* Full width form */
+        padding: 15px;
+    }
+
+    /* --- Footer --- */
+    .link-container {
+        flex-direction: column;
+        /* Stack footer links */
+        gap: 1.5rem;
+    }
+
+    /* --- Banners --- */
+    .banner-image img {
+        height: auto;
+        min-height: 200px;
     }
 }

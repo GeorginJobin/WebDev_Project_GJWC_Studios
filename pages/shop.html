@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Shop</title>
+    <title>Shop at AnimeHaven</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fun anime-themed homepage with reviews.">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Linking css -->
     <link rel="stylesheet" href="../css/mystyle.css">
 </head>
@@ -14,16 +16,33 @@
 
     <!-- Creating header, and assigning class to contents of header -->
     <header class="header" id="myHeader">
-        <nav class="header-content">
-            <div class="header-buttons">
-                <button onclick="location.href='../index.html'">Home</button>
-                <button onclick="location.href='about.html'">About</button>
-                <button onclick="location.href='contact.html'">Contact</button>
-                <button onclick="location.href='shop.html'">Shop</button>
-            </div>
+        <nav class="header-content" aria-label="Main navigation">
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()">Menu</button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="shop.html">Shop</a>
+                </div>
 
+            </div>
         </nav>
-        <img src="../media/new_icon.png" alt="Logo" class="icon">
+
+
+        <div class="header-logo-wrapper">
+            <img src="../media/new_icon.png" alt="Logo" class="icon">
+            <button class="Logo-button" onclick="location.href='../index.html'"></button>
+
+        </div>
+
+
+        <div class="cart-button">
+            <button onclick="location.href='cart.html'">
+                <img src="../media/cart-icon.png" alt="Cart Icon" class="cart-icon">
+            </button>
+        </div>
+
     </header>
 
     <!-- The gold lining -->
@@ -31,16 +50,271 @@
 
 
 
-    <section>
-        <h2 class="p1" center>Shop</h2>
-        <h3 class="p1" center>Under development!</h3>
+
+
+    <main>
+        <h1 class="visually-hidden">Anime Haven Shop</h1>
+
+
+        <h2 id="banner-heading" class="visually-hidden">Shop Promotions & Featured Items</h2>
+        <section class="mainBanner" aria-label="Shop main banner">
+
+            <!-- Scrolling text -->
+            <div class="scrolling-text">
+                <div class="scrolling-text-container">
+                    <span> CODE AH25 FOR 25% OFF わりびき |</span>
+                    <span>CODE AH25 FOR 25% OFF わりびき |</span>
+                    <span>CODE AH25 FOR 25% OFF わりびき |</span>
+                    <span>CODE AH25 FOR 25% OFF わりびき |</span>
+                    <span>CODE AH25 FOR 25% OFF わりびき |</span>
+                    <span>CODE AH25 FOR 25% OFF わりびき |</span>
+
+                </div>
+            </div>
+
+            <div class="banner-image-container">
+                <div class="banner-image">
+                    <img src="../media/bigbanner.png" alt="Anime Haven Shop Banner" width="1200" height="400">
+                </div>
+            </div>
+
+            <div class="product-previews-container">
+                <div class="product-preview">
+                    <img class="previewImage1" src="../media/products/akatsukinecklace.png" alt="Product Preview 1">
+                </div>
+                <div class="product-preview">
+                    <img class="previewImage2" src="../media/products/mahoraga-hoodie.png" alt="Product Preview 2">
+                </div>
+                <div class="product-preview">
+                    <img class="previewImage3" src="../media/products/tanjirofigure.png" alt="Product Preview 3">
+                </div>
+                <div class="product-preview">
+                    <img class="previewImage4" src="../media/products/demonslayer-case.png" alt="Product Preview 4">
+                </div>
+                <div class="product-preview">
+                    <img class="previewImage5" src="../media/products/pain mug.png" alt="Product Preview 5">
+                </div>
+
+
+            </div>
+
+            <!-- Scrolling text -->
+            <div class="scrolling-text">
+                <div class="scrolling-text-container">
+                    <span>SHOP ALL DEALS バーゲン |</span>
+                    <span>SHOP ALL DEALS バーゲン |</span>
+                    <span>SHOP ALL DEALS バーゲン |</span>
+                    <span>SHOP ALL DEALS バーゲン |</span>
+                    <span>SHOP ALL DEALS バーゲン |</span>
+                    <span>SHOP ALL DEALS バーゲン |</span>
+                    <span>SHOP ALL DEALS バーゲン |</span>
+                    <span>SHOP ALL DEALS バーゲン |</span>
+
+                </div>
+            </div>
+
+
+
+
+        </section>
+
+
+        <!-- Products section -->
+        <section class="products" aria-label="Shop products section">
+
+
+            <h2 class="products-heading">Shop Our Products</h2>
+            <br>
+
+            <!-- Products Container -->
+            <div class="products-container">
+
+                <!-- Product -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../media/products/skullhoodie.png" alt="Skull Knight Hoodie" width="400" height="400"
+                            loading="lazy">
+                    </div>
+                    <div class="product-card-label">
+                        <span class="Category-Badge">
+                            <p>Hoodies</p>
+                        </span>
+                        <h3 class="Product-name">Skull Knight Hoodie</h3>
+                    </div>
+                    <div class="add-to-cart-button">
+                        <button type="button" aria-label="Add Skull Knight Hoodie to cart">Add to Cart</button>
+                        <div class="price">
+                            <p>$60.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../media/products/XXhoodie.png" alt="XX Hoodie" width="400" height="400"
+                            loading="lazy">
+                    </div>
+                    <div class="product-card-label">
+                        <span class="Category-Badge">
+                            <p>Hoodies</p>
+                        </span>
+                        <h3 class="Product-name">XX Hoodie</h3>
+                    </div>
+                    <div class="add-to-cart-button">
+                        <button type="button" aria-label="Add XX Hoodie to cart">Add to Cart</button>
+                        <div class="price">
+                            <p>$60.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../media/products/mahoraga-hoodie.png" alt="Mahoraga Hoodie" width="400" height="400"
+                            loading="lazy">
+                    </div>
+                    <div class="product-card-label">
+                        <span class="Category-Badge">
+                            <p>Hoodies</p>
+                        </span>
+                        <h3 class="Product-name">Mahoraga Hoodie</h3>
+                    </div>
+                    <div class="add-to-cart-button">
+                        <button type="button" aria-label="Add Mahoraga Hoodie to cart">Add to Cart</button>
+                        <div class="price">
+                            <p>$60.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../media/products/Accursed_Hoodie.png" alt="Accursed Hoodie" width="400" height="400"
+                            loading="lazy">
+                    </div>
+                    <div class="product-card-label">
+                        <span class="Category-Badge">
+                            <p>Hoodies</p>
+                        </span>
+                        <h3 class="Product-name">Accursed Hoodie</h3>
+                    </div>
+                    <div class="add-to-cart-button">
+                        <button type="button" aria-label="Add Accursed Hoodie to cart">Add to Cart</button>
+                        <div class="price">
+                            <p>$60.00</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+
+
+
+        </section>
+
+    </main>
+
+    <!-- Footer Separation-->
+    <div class="footer-wave"></div>
+
+    <section class="footer">
+
+
+
+        <footer role="contentinfo">
+            <div class="icon">
+                <img src="../media/Logo.png" alt="logo" loading="lazy">
+            </div>
+
+            <!-- Short About -->
+            <p class="about">
+                <br><br>
+                Anime Haven was started out of a lifelong love for anime and the community around it.
+                <br>
+                Whether you're browsing for new favourites or looking for something special, we’re here to help you feel
+                at home.
+                <br><br><br><br>
+            </p>
+
+            <!-- Other Clickables -->
+            <div class="link-container">
+                <div class="information">
+                    <ul>
+                        <li>
+                            <a href="#">Our Company</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="../pages/about.html">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul>
+                        <li>
+                            <a href="../pages/contact.html">Contact</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="#">Terms & Condition</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navigation">
+
+                    <ul>
+                        <li>
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="#top">Back To Top</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+            </div>
+
+            <br><br>
+            <small class="Copyright-Notice">© 2025 Georgin Jobin, Will Comerford, Rishi Sachin</small>
+        </footer>
     </section>
 
+    <script>
+        // New function to toggle the dropdown menu
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-    <!-- Just a footer with names on it -->
-    <footer>
-        <p>&copy; 2025 Georgin Jobin, Will Comerford</p>
-    </footer>
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
 
 
 </body>

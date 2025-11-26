@@ -15,13 +15,16 @@
     <!-- Creating header, and assigning class to contents of header -->
     <header class="header" id="myHeader">
         <nav class="header-content">
-            <div class="header-buttons">
-                <button onclick="location.href='../index.html'">Home</button>
-                <button onclick="location.href='about.html'">About</button>
-                <button onclick="location.href='contact.html'">Contact</button>
-                <button onclick="location.href='shop.html'">Shop</button>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()">Menu</button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="shop.html">Shop</a>
+                </div>
+                
             </div>
-
         </nav>
         <img src="../media/new_icon.png" alt="Logo" class="icon">
     </header>
@@ -31,9 +34,71 @@
 
 
 
-    <section>
-        <h2 class="p1" center>My Hero Academia</h2>
-        <h3 class="p1" center>Under development!</h3>
+    <section class="footer">
+
+
+
+        <footer role="contentinfo">
+            <div class="icon">
+                <img src="../media/Logo.png" alt="logo" loading="lazy">
+            </div>
+
+            <!-- Short About -->
+            <p class="about">
+                <br><br>
+                Anime Haven was started out of a lifelong love for anime and the community around it.
+                <br>
+                Whether you're browsing for new favourites or looking for something special, we’re here to help you feel
+                at home.
+                <br><br><br><br>
+            </p>
+
+            <!-- Other Clickables -->
+            <div class="link-container">
+                <div class="information">
+                    <ul>
+                        <li>
+                            <a href="#">Our Company</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="../pages/about.html">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul>
+                        <li>
+                            <a href="../pages/contact.html">Contact</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="#">Terms & Condition</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navigation">
+
+                    <ul>
+                        <li>
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="#top">Back To Top</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+            </div>
+
+            <br><br>
+            <small class="Copyright-Notice">© 2025 Georgin Jobin, Will Comerford, Rishi Sachin</small>
+        </footer>
     </section>
 
     
@@ -42,7 +107,26 @@
         <p>&copy; 2025 Georgin Jobin, Will Comerford</p>
     </footer>
 
+    <script>
+     // New function to toggle the dropdown menu
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
