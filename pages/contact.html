@@ -43,18 +43,32 @@
             <div class="giga-rectangle">
                 <h2>Contact</h2>
                 <p>If you have questions, feedback, or collaboration ideas, feel free to reach out!</p>
-                <form action="">
-                    <label for="fname">First name:</label><br>
-                    <input type="text" id="fname" name="fname" value=""><br>
-                    <label for="lname">Last name:</label><br>
-                    <input type="text" id="lname" name="lname" value=""><br>
-                    <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email" value=""><br>
-                    <label for="Reason">Reason:</label><br>
+            <form id="contactForm">
+                <div id="error-message" style="margin-bottom:10px;"></div>
 
-                    <textarea type="text" id="Reason" name="Reason" value=""></textarea><br><br>
-                    <input type="submit" value="Submit">
-                </form>
+                  <label for="fname">First name:</label><br>
+                  <input type="text" id="fname" name="fname"><br>
+    
+                  <label for="lname">Last name:</label><br>
+                  <input type="text" id="lname" name="lname"><br>
+    
+                  <label for="email">Email:</label><br>
+                  <input type="text" id="email" name="email"><br>
+    
+                  <label for="contact-method">Preferred contact method:</label><br>
+                      <select id="contact-method" name="contact-method">
+                         <option value="" disabled selected>Select an option</option>
+                         <option value="Email">Email</option>
+                         <option value="Phone">Phone</option>
+                         <option value="None">None</option>
+                      </select><br><br>
+
+                  <label for="Reason">Reason:</label><br>
+                  <textarea id="Reason" name="Reason"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+           </form>
+
             </div>
 
         </section>
@@ -86,7 +100,7 @@
 
                 Anime Haven was started out of a lifelong love for anime and the community around it.
 
-                Whether you're browsing for new favourites or looking for something special, we’re here to help you feel
+                Whether you're browsing for new favourites or looking for something special, we are here to help you feel
                 at home.
 
             </p>
@@ -144,25 +158,36 @@
     </section>
 
     <script>
-        // New function to toggle the dropdown menu
-        function toggleDropdown() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Stop the form from submitting
+    const errorDiv = document.getElementById("error-message");
+    errorDiv.innerHTML = ""; // Clear previous errors
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
+    const fname = document.getElementById("fname").value.trim();
+    const lname = document.getElementById("lname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const reason = document.getElementById("Reason").value.trim();
+    const contactMethod = document.getElementById("contact-method").value;
+
+    let errors = [];
+
+    if (!fname) errors.push("First name is required.");
+    if (!lname) errors.push("Last name is required.");
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("Valid email is required.");
+    if (!reason) errors.push("Please provide a reason for contact.");
+    if (!contactMethod) errors.push("Please select a preferred contact method.");
+
+    if (errors.length > 0) {
+    errorDiv.style.color = "red"; // Errors in red
+    errorDiv.innerHTML = errors.join("<br>");
+} else {
+    errorDiv.style.color = "green"; // Success message in green
+    errorDiv.innerHTML = "Form submitted successfully!";
+        
+    }
+});
+</script>
+
 </body>
 
 </html>
