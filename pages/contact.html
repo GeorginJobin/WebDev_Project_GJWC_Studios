@@ -32,10 +32,18 @@
             <button class="Logo-button" onclick="location.href='../index.html'" aria-label="Go to homepage"></button>
 
         </div>
+
+        <div class="cart-button">
+            <button onclick="location.href='cart.html'">
+                <img src="../media/cart-icon.png" alt="Cart Icon" class="cart-icon">
+            </button>
+        </div>
     </header>
 
     <!-- The gold lining -->
     <div class="banner2"></div>
+
+    <p class="visually-hidden">Contact</p>
 
     <!-- Html contact form -->
     <main>
@@ -43,31 +51,28 @@
             <div class="giga-rectangle">
                 <h2>Contact</h2>
                 <p>If you have questions, feedback, or collaboration ideas, feel free to reach out!</p>
-            <form id="contactForm">
-                <div id="error-message" style="margin-bottom:10px;"></div>
+                <form id="contactForm">
+                    <div id="error-message" style="margin-bottom:10px;"></div>
 
-                  <label for="fname">First name:</label><br>
-                  <input type="text" id="fname" name="fname"><br>
-    
-                  <label for="lname">Last name:</label><br>
-                  <input type="text" id="lname" name="lname"><br>
-    
-                  <label for="email">Email:</label><br>
-                  <input type="text" id="email" name="email"><br>
-    
-                  <label for="contact-method">Preferred contact method:</label><br>
-                      <select id="contact-method" name="contact-method">
-                         <option value="" disabled selected>Select an option</option>
-                         <option value="Email">Email</option>
-                         <option value="Phone">Phone</option>
-                         <option value="None">None</option>
-                      </select><br><br>
+                    <label for="fname">Full name:</label><br>
+                    <input type="text" id="fname" name="fname"><br>
 
-                  <label for="Reason">Reason:</label><br>
-                  <textarea id="Reason" name="Reason"></textarea><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email"><br>
 
-    <input type="submit" value="Submit">
-           </form>
+                    <label for="contact-method">Preferred contact method:</label><br>
+                    <select id="contact-method" name="contact-method">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Email">Email</option>
+                        <option value="Phone">Phone</option>
+                        <option value="None">None</option>
+                    </select><br><br>
+
+                    <label for="Reason">Reason:</label><br>
+                    <textarea id="Reason" name="Reason"></textarea><br><br>
+
+                    <input type="submit" value="Submit">
+                </form>
 
             </div>
 
@@ -100,7 +105,8 @@
 
                 Anime Haven was started out of a lifelong love for anime and the community around it.
 
-                Whether you're browsing for new favourites or looking for something special, we are here to help you feel
+                Whether you're browsing for new favourites or looking for something special, we are here to help you
+                feel
                 at home.
 
             </p>
@@ -158,35 +164,53 @@
     </section>
 
     <script>
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // Stop the form from submitting
-    const errorDiv = document.getElementById("error-message");
-    errorDiv.innerHTML = ""; // Clear previous errors
+        // New function to toggle the dropdown menu
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-    const fname = document.getElementById("fname").value.trim();
-    const lname = document.getElementById("lname").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const reason = document.getElementById("Reason").value.trim();
-    const contactMethod = document.getElementById("contact-method").value;
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Stop the form from submitting
+            const errorDiv = document.getElementById("error-message");
+            errorDiv.innerHTML = ""; // Clear previous errors
 
-    let errors = [];
+            const fname = document.getElementById("fname").value.trim();
 
-    if (!fname) errors.push("First name is required.");
-    if (!lname) errors.push("Last name is required.");
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("Valid email is required.");
-    if (!reason) errors.push("Please provide a reason for contact.");
-    if (!contactMethod) errors.push("Please select a preferred contact method.");
+            const email = document.getElementById("email").value.trim();
+            const reason = document.getElementById("Reason").value.trim();
+            const contactMethod = document.getElementById("contact-method").value;
 
-    if (errors.length > 0) {
-    errorDiv.style.color = "red"; // Errors in red
-    errorDiv.innerHTML = errors.join("<br>");
-} else {
-    errorDiv.style.color = "green"; // Success message in green
-    errorDiv.innerHTML = "Form submitted successfully!";
-        
-    }
-});
-</script>
+            let errors = [];
+
+            if (!fname) errors.push("First name is required.");
+
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("Valid email is required.");
+            if (!reason) errors.push("Please provide a reason for contact.");
+            if (!contactMethod) errors.push("Please select a preferred contact method.");
+
+            if (errors.length > 0) {
+                errorDiv.style.color = "red"; // Errors in red
+                errorDiv.innerHTML = errors.join("<br>");
+            } else {
+                errorDiv.style.color = "green"; // Success message in green
+                errorDiv.innerHTML = "Form submitted successfully!";
+
+            }
+        });
+    </script>
 
 </body>
 

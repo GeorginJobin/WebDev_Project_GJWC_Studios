@@ -6,12 +6,13 @@ The site is designed to capture the excitement of anime fandom with a bright, co
 ## Features
 
 - **Home Page:** Showcases new releases and popular series in dedicated sections. Each featured anime includes a custom description to help visitors discover and discuss their favorite shows.
-- **Navigation Menu:** Simple links make it easy to explore the Home, About, and Contact pages.
+- **Navigation Menu:** Simple links make it easy to explore the Home, About, Contact and Shop pages.
 - **About Page:** Shares the story and mission behind Anime Haven, helping users connect with the community.
-- **Contact Page:** Includes a feedback form for questions, suggestions, or collaboration ideas.
+- **Contact Page:** Includes a feedback form for any questions or issues that arise.
+- **Shop Page:** To buy merch from your favourite animes.
 - **Unique Background:** Manga panel–inspired background adds creative flair and helps the site stand out.
-- **More to be added!:**
+
 
 ---
 
-© 2025 Georgin Jobin, Will Comerford
+© 2025 Georgin Jobin, Will Comerford, Rishi Sachin

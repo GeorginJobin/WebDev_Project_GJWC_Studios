@@ -3,16 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Shop</title>
+    <title>My Hero Academia Review</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fun anime-themed homepage with reviews.">
-    <!-- Linking css -->
     <link rel="stylesheet" href="../css/mystyle.css">
 </head>
 
 <body>
 
-    <!-- Creating header, and assigning class to contents of header -->
     <header class="header" id="myHeader">
         <nav class="header-content">
             <div class="dropdown">
@@ -31,11 +29,105 @@
             <button class="Logo-button" onclick="location.href='../index.html'" aria-label="Go to homepage"></button>
 
         </div>
+
+        <div class="cart-button">
+            <button onclick="location.href='cart.html'">
+                <img src="../media/cart-icon.png" alt="Cart Icon" class="cart-icon">
+            </button>
+        </div>
     </header>
 
-    <!-- The gold lining -->
     <div class="banner2"></div>
 
+    <p class="visually-hidden">My Hero Academia Review</p>
+
+    <main>
+        <div class="mega-rectangle">
+
+
+            <img src="../media/MHA.jpg" alt="My Hero Academia poster" class="review-image">
+
+            <h1>My Hero Academia</h1>
+            <div class="review-rating">
+                <span>⭐️⭐️⭐️⭐️</span> (4/5 Stars)
+            </div>
+            <p>In a world where almost everyone is born with a superpower called a 'Quirk,' Izuku Midoriya, a Quirkless
+                boy, is chosen to inherit the power of the world's greatest hero, All Might. He enrolls in U.A. High
+                School to become the next symbol of peace. **It is a heartfelt, action-packed series that masterfully
+                reinvents the superhero genre with classic shonen tropes.**</p>
+
+
+
+            <hr class="solid">
+
+            <section>
+                <h2>Detailed Review</h2>
+                <p>My Hero Academia (MHA) successfully merges the superhero comic book aesthetic with the foundational
+                    principles of battle-shonen anime. The story follows Midoriya's journey from zero to hero, focusing
+                    heavily on the idea of inherited responsibility and the grueling hard work required to become truly
+                    great. It's a tale of perseverance and hope.</p>
+
+                <h3>World-Building and Lore</h3>
+                <p>The world is well-defined, revolving around the usage and regulation of Quirks, and the official Hero
+                    and Villain infrastructure. The series effectively uses the high school setting, U.A. High, to create
+                    a cast of compelling side characters with unique powers and personalities, all training to master
+                    their abilities. The lore surrounding the powerful 'One For All' and 'All For One' Quirks provides a
+                    deep, central conflict.</p>
+
+                <h3>Characters and Emotional Depth</h3>
+                <p>Midoriya's emotional journey and his rivalry with Katsuki Bakugo are central to the series' drama. MHA
+                    excels at giving its vast supporting cast moments to shine, exploring their backstories, failures, and
+                    successes, ensuring the entire class feels like a team of genuine, evolving heroes. The themes of
+                    heroism, sacrifice, and the psychological burden of being a 'Symbol' are explored with maturity.</p>
+
+                <h3>Action and Pacing</h3>
+                <p>The action sequences are colorful, dynamic, and often visually stunning, with battles frequently having
+                    a strong emotional core tied to the characters' development. The pacing is generally excellent,
+                    balancing training and slice-of-life school moments with intense, multi-episode combat arcs. The music
+                    score elevates every major moment, making the heroic clashes feel truly epic.</p>
+            </section>
+        </div>
+    </main>
+
+    <section class="fake-reviews-section">
+        <h2>What Other Fans Are Saying</h2>
+        <div class="fake-reviews-grid">
+
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="reviewer-avatar">PU</div>
+                    <div class="reviewer-info">
+                        <strong>Plus_Ultra_Fan</strong>
+                        <div class="card-rating">⭐️⭐️⭐️⭐️⭐️</div>
+                    </div>
+                </div>
+                <p>The ultimate superhero anime! Midoriya's journey from Quirkless to the greatest hero is inspiring. Every season delivers epic moments, and the character designs are so creative. A truly feel-good, motivational series.</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="reviewer-avatar">TS</div>
+                    <div class="reviewer-info">
+                        <strong>Shoto_Soba</strong>
+                        <div class="card-rating">⭐️⭐️⭐️⭐️</div>
+                    </div>
+                </div>
+                <p>Solid show, great action, but I feel like some of the side characters don't get enough screentime outside of major arcs. Still, the core themes of heroism and sacrifice are executed perfectly. Always look forward to the next season.</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-card-header">
+                    <div class="reviewer-avatar">AM</div>
+                    <div class="reviewer-info">
+                        <strong>AllMightNo1</strong>
+                        <div class="card-rating">⭐️⭐️⭐️⭐️⭐️</div>
+                    </div>
+                </div>
+                <p>This show single-handedly got me into anime. It's got heart, humor, and some of the best-animated hero vs. villain battles you will ever see. The emotional stakes are always high. GO WATCH IT!</p>
+            </div>
+
+        </div>
+    </section>
 
 
     <section class="footer">
@@ -50,7 +142,6 @@
             <br>
 
 
-            <!-- Short About -->
             <p class="about">
 
                 Anime Haven was started out of a lifelong love for anime and the community around it.
@@ -63,7 +154,6 @@
             <br>
 
 
-            <!-- Other Clickables -->
             <div class="link-container">
                 <div class="information">
                     <ul>
@@ -111,12 +201,6 @@
             <small class="Copyright-Notice">© 2025 Georgin Jobin, Will Comerford, Rishi Sachin</small>
         </footer>
     </section>
-
-
-    <!-- Just a footer with names on it -->
-    <footer>
-        <p>&copy; 2025 Georgin Jobin, Will Comerford</p>
-    </footer>
 
     <script>
         // New function to toggle the dropdown menu
